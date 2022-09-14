@@ -55,7 +55,7 @@ export const server = http.createServer(async (req, res) => {
           if (ind !== -1) {
             if (winnerParsed.score > winnersArrParsed[ind].score) {
               winnersArrParsed[ind] = { ...winnerParsed };
-              winnersArrParsed.sort((a, b) => b.score - a.score);
+              winnersArrParsed = [...winnersArrParsed].sort((a, b) => b.score - a.score);
             }
           } else {
             winnersArrParsed = [...winnersArrParsed, winnerParsed]
