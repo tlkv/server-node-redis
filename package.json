@@ -9,7 +9,7 @@
     "start": "npm run build && npm run prod",
     "prod": "node dist/index.js",
     "prod:old": "cross-env NODE_ENV=production node dist/index.js",
-    "build": "tsc",
+    "build": "npm i && tsc",
     "test": "jest"
   },
   "author": "",
