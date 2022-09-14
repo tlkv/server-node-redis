@@ -53,7 +53,9 @@ export const server = http.createServer(async (req, res) => {
           const winnerParsed: WinnerData = JSON.parse(winner);
           const ind = winnersArrParsed.findIndex((i) => i.name === winnerParsed.name);
           if (ind !== -1) {
-            winnersArrParsed[ind] = winnerParsed;
+            if (winnerParsed.score > winnersArrParsed[ind].score) {
+              winnersArrParsed[ind] = { ...winnerParsed };
+            }
           } else {
             winnersArrParsed = [...winnersArrParsed, winnerParsed]
               .sort((a, b) => b.score - a.score)
