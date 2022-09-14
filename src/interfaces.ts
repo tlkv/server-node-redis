@@ -1,6 +1,4 @@
-export interface UserData {
-  id?: string;
-  username: string;
-  age: number;
-  hobbies: string[];
+export interface WinnerData {
+  name: string;
+  score: number;
 }
